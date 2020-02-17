@@ -66,6 +66,7 @@ class gestalum//CLASE GETSALUM
 
     }
 
+
     /**
      * Funcion para listar un profesor en concreto dependiendo del @param cod
      * @param cod parámetro que pasa el codigo del profesor del cual realizar la búsqueda
@@ -82,6 +83,16 @@ class gestalum//CLASE GETSALUM
             echo '<p><center>No se han encontrado resultados</center></p>';
         }
 
+    }
+
+    /**
+     * Metodo para obtener una lista de TODOS los profesores
+     * @return profesores devuelve cada uno de los profesores
+     */
+    public function getProfesorAll(){
+        
+
+        return $profesores;
 
     }
 
