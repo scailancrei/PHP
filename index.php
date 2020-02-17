@@ -2,7 +2,12 @@
 
 require './gestalum.php';
 session_unset();
+/**
+ * Objeto clase gestalum
+ */
 $bd = new gestalum;
+
+//Condicional: Si el campo usuario y el campo clave contienen datos, realizamos la funcion del login
 if (isset($_POST['usuario']) && isset($_POST['clave'])) {
     $_SESSION['usuario'] = $_POST['usuario'];
     $_SESSION['clave'] = $_POST['clave'];
@@ -48,16 +53,19 @@ if (isset($_POST['usuario']) && isset($_POST['clave'])) {
 
     </form>
 
-
-    <form>
+    <h3><center>Lista de profesor</center></h3>
+    <br>
+    <form action="./index.php" method="POST">
   <div class="row">
     <div class="col">
-      <input type="text" class="form-control" placeholder="First name">
+      <input type="number" class="form-control" name="cod" placeholder="Introduce cod de profesor">
     </div>
     <div class="col">
-      <input type="text" class="form-control" placeholder="Last name">
+      <input type="text" class="form-control" readonly name="codigo">
     </div>
   </div>
+  <br>
+  <button type="submit">Enviar</button>
 </form>
 
 
