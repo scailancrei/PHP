@@ -66,14 +66,14 @@ class gestalum//CLASE GETSALUM
 
     }
 
-
     /**
      * Funcion para listar un profesor en concreto dependiendo del @param cod
      * @param cod parámetro que pasa el codigo del profesor del cual realizar la búsqueda
      * @return profesor devuelve el profesor
      */
-    public function getProfesor($cod){
-        
+    public function getProfesor($cod)
+    {
+
         $sql = "SELECT * FROM profesores where cod_prof = $cod";
         $resultado = $this->ejecutaConsulta($sql);
         $profesor = $resultado->fetch(PDO::FETCH_ASSOC);
@@ -89,7 +89,8 @@ class gestalum//CLASE GETSALUM
      * Metodo para obtener una lista de TODOS los profesores
      * @return profesores devuelve cada uno de los profesores
      */
-    public function getProfesorAll(){
+    public function getProfesorAll()
+    {
         
 
         return $profesores;
