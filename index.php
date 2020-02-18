@@ -26,35 +26,35 @@ if (isset($_POST['cod'])) {
 		<center><h1> DIV Izquierdo 60% </h1></center>
         <?php
 if (isset($profesor)) {
-    $lista = "";
-    $lista .= "<table class='table table-sm'>";
-    $lista .= "<thead class='thead-dark'>";
-    $lista .= "<tr>";
-    $lista .= "<th>cod_prof</th>";
-    $lista .= "<th>Nombre</th>";
-    $lista .= "<th>Apellidos</th>";
-    $lista .= "<th>Activo</th>";
-    $lista .= "<th>Ciudad</th>";
-    $lista .= "</tr>";
-    {
-        foreach ($listado as $row) {
-            $lista .= "<tr>";
-            $lista .= '<td id="' . $row['P_id'] . '">';
-            $lista .= '<a href="#" onclick="cargar(\'#Der\', \'./derecho.php?id=' . $row['P_id'] . '\');">' . $row['P_id'] . '</a></td>';
-            $lista .= "<td>" . $row['Nombre'] . "</td>";
-            $lista .= "<td>" . $row['Apellidos'] . "</td>";
-            $lista .= "<td>" . $row['Direccion'] . "</td>";
-            $lista .= "<td>" . $row['Ciudad'] . "</td>";
-            $lista .= "</tr>";
+        $lista = "";
+        $lista .= "<table class='table table-sm'>";
+        $lista .= "<thead class='thead-dark'>";
+        $lista .= "<tr>";
+        $lista .= "<th>cod_prof</th>";
+        $lista .= "<th>Nombre</th>";
+        $lista .= "<th>Apellidos</th>";
+        $lista .= "<th>Activo</th>";
+        $lista .= "<th>Ciudad</th>";
+        $lista .= "</tr>";
+        {
+            foreach ($listado as $row) {
+                $lista .= "<tr>";
+                $lista .= '<td id="' . $row['P_id'] . '">';
+                $lista .= '<a href="#" onclick="cargar(\'#Der\', \'./derecho.php?id=' . $row['P_id'] . '\');">' . $row['P_id'] . '</a></td>';
+                $lista .= "<td>" . $row['Nombre'] . "</td>";
+                $lista .= "<td>" . $row['Apellidos'] . "</td>";
+                $lista .= "<td>" . $row['Direccion'] . "</td>";
+                $lista .= "<td>" . $row['Ciudad'] . "</td>";
+                $lista .= "</tr>";
+            }
+            $lista .= "</table>";
+            echo $lista;
         }
-        $lista .= "</table>";
-        echo $lista;
-    }
-    ?>
+        ?>
 	</div>
 <?php
 }
-
+}
 ?>
 
 
