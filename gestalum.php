@@ -91,9 +91,16 @@ class gestalum//CLASE GETSALUM
      */
     public function getProfesorAll()
     {
-        
 
-        return $profesores;
+        $sql = "SELECT * FROM profesores ;";
+        $resultado = $this->ejecutaConsulta($sql);
+        $profesor = $resultado->fetchAll(PDO::FETCH_ASSOC);
+        if (isset($profesor)) {
+            return $profesor;
+        } else {
+            echo '<p><center>No se han encontrado resultados</center></p>';
+        }
+        
 
     }
 
