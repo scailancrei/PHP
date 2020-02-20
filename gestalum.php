@@ -100,7 +100,44 @@ class gestalum//CLASE GETSALUM
         } else {
             echo '<p><center>No se han encontrado resultados</center></p>';
         }
-        
+
+    }
+
+    /**
+     * Funcion para listar un alumno en concreto dependiendo del @param cod
+     * @param cod parámetro que pasa el codigo del alumno del cual realizar la busqueda
+     * @return alumno devuelve el alumno
+     */
+    public function getAlumno($cod)
+    {
+
+        $sql = "SELECT * FROM alumnos where nexped = $cod";
+        $resultado = $this->ejecutaConsulta($sql);
+        $alumno = $resultado->fetch(PDO::FETCH_ASSOC);
+        if ($cod = $alumno['nexped']) {
+            return $alumno;
+        } else {
+            echo '<p><center>No se han encontrado resultados</center></p>';
+        }
+    }
+
+
+
+    /**
+     * Metodo para obtener una lista de TODOS los alumnos
+     * @return alumnos devuelve cada uno de los alumnos
+     */
+    public function getAlumnoAll()
+    {
+
+        $sql = "SELECT * FROM alumnos ;";
+        $resultado = $this->ejecutaConsulta($sql);
+        $alumnos = $resultado->fetchAll(PDO::FETCH_ASSOC);
+        if (isset($alumnos)) {
+            return $profesor;
+        } else {
+            echo '<p><center>No se han encontrado resultados</center></p>';
+        }
 
     }
 
