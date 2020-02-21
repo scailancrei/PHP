@@ -292,4 +292,71 @@ class gestalum//CLASE GETSALUM
      }
 
 
+     /**
+      * Funcion para insertar un nuevo alumno
+      * @param cod insertamos el codigo del alumno por parametro
+      * @param nom insertamos el nombre del alumno por parametro
+      * @param ape insertamos el apellido del alumno por parametro
+      * @param act insertamos por parametro el nº que indica si esta activo o no 
+      */
+     public function setAlumno($cod,$nom,$ape,$act){
+        $sql = "INSERT INTO alumnos ('nexped', 'nombre', 'apellidos', 'activo') values $cod, $nom, $ape, $act;";
+        $resultado = $this->ejecutaConsulta($sql);
+        $insertar = $resultado->execute();
+        if (isset($insertar)) {
+            echo '<p><center>Inserccion completada</center></p>';
+        } else{
+            echo '<p><center>ERROR!!! No se puede insertar ningun dato</center></p>';
+        }
+
+     }
+
+     /**
+      * Funcion para insertar un nuevo modulo
+      * @param cod insertamos el codigo del modulo por parametro
+      * @param mod insertamos el modulo por parametro
+      * @param des insertamos la descripcion del modulo por parametro
+      * @param cicl insertamos por parametro el tipo de ciclo al que pertenece
+      */
+      public function setModulo($cod, $mod, $des, $ciclo){
+        $sql = "INSERT INTO modulos ('cod_mod', 'modulo', 'descripcion', 'ciclo') values $cod, $mod, $des, $ciclo;";
+        $resultado = $this->ejecutaConsulta($sql);
+        $insertar = $resultado->execute();
+        if (isset($insertar)) {
+            echo '<p><center>Inserccion completada</center></p>';
+        } else{
+            echo '<p><center>ERROR!!! No se puede insertar ningun dato</center></p>';
+        }
+     }
+
+     /**
+      * Funcion para insertar una matricula de un alumno
+      * @param cod insertamos el codigo de matricula por parametro
+      * @param curso insertamos el curso de la nueva matricula por parametro
+      * @param codal insertamos por parametro el codigo del alumno por parametro
+      * @param codmo insertamos por parametro el codigo del modulo al que pertenecerá
+      * @param activo insertamos como parametro el nº que indica si esta activo o no
+      */
+      public function setMatricula($cod, $curso, $codal, $codmo, $activo){
+        $sql = "INSERT INTO matriculas ('cod_matricula', 'curso', 'nexped', 'cod_mod', 'activo') values $cod, $curso, $codal, $codmo, $activo;";
+        $resultado = $this->ejecutaConsulta($sql);
+        $insertar = $resultado->execute();
+        if (isset($insertar)) {
+            echo '<p><center>Inserccion completada</center></p>';
+        } else{
+            echo '<p><center>ERROR!!! No se puede insertar ningun dato</center></p>';
+        }
+      }
+
+      public function setImparte($cod, $curso, $cod_prof, $codmod){
+        $sql = "INSERT INTO imparte ('cod', 'curso', 'cod_prof', 'cod_mod') values $cod, $curso, $cod_prof, $codmod;";
+        $resultado = $this->ejecutaConsulta($sql);
+        $insertar = $resultado->execute();
+        if (isset($insertar)) {
+            echo '<p><center>Inserccion completada</center></p>';
+        } else{
+            echo '<p><center>ERROR!!! No se puede insertar ningun dato</center></p>';
+        }
+      }
+
 }
